@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=asciiquarium-1.2.2
+Exec=asciiquarium
+Terminal=false
+Type=Application
+StartupNotify=false
+Icon=asciiquarium.png
+MimeType=
+Categories=Game;
