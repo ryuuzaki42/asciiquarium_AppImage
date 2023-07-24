@@ -1,6 +1,8 @@
 
 # asciiquarium_AppImage
 
+Remove the git folder (.git/) before creating the AppImage
+
 ## asciiquarium version 1.2.2
 Fork in this package:
 https://github.com/ryuuzaki42/asciiquarium/
