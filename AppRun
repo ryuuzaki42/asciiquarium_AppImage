@@ -5,17 +5,39 @@ export PERL5LIB="$HERE/usr/lib64/perl5/vendor_perl/:$HERE/usr/share/perl5/vendor
 
 echo -e "\n # Repository: https://github.com/ryuuzaki42/asciiquarium #\n"
 
-echo "1 - asciiquarium"
-echo "2 - asciiquarium in fullscreen"
-echo "3 - tiftquarium"
-echo -en "Which one to run?: "
-read -r nun_run
+option_run=$@
+if [ "$option_run" != '' ]; then
 
-if [ "$nun_run" == '2' ]; then
-    #$HERE/usr/games/asciiquarium_fs
-    xterm -fullscreen -bg black -e $HERE/usr/games/asciiquarium $@
-elif [ "$nun_run" == '3' ]; then
-    $HERE/usr/games/tiftquarium
-else # if [ "$nun_run" == '1' ]; then
-    $HERE/usr/games/asciiquarium
+    num_run=$(echo "${option_run:0:1}") # Get first value
+    if echo "$num_run" | grep -qEv "1|2|3"; then # if not 1, 2 or 3, clean nun_run
+        num_run=''
+    else
+        option_run=$(echo "$option_run" | cut -c3-) # Remove first 2 characters
+    fi
+else
+    echo -e " Tip: Can pass parameters like: (1|2|3) or -h (-h to help message)\n"
+fi
+
+#echo -e "\nnum_run: $num_run"
+#echo -e "\noption_run: $option_run"
+
+if [ "$num_run" == '' ]; then
+    echo "1 - asciiquarium"
+    echo "2 - asciiquarium in fullscreen"
+    echo "3 - tiftquarium"
+    echo -en "Which one to run?: "
+    read -r nun_run
+fi
+
+if [ "$num_run" == '2' ]; then
+    if echo "$option_run" | grep -qE "\-h|\-\-help"; then # If pass -h|--help call asciiquarium
+        $HERE/usr/games/asciiquarium -h
+    else
+        #$HERE/usr/games/asciiquarium_fs
+        xterm -fullscreen -bg black -e $HERE/usr/games/asciiquarium $option_run
+    fi
+elif [ "$num_run" == '3' ]; then
+    $HERE/usr/games/tiftquarium $option_run
+else # if [ "$num_run" == '1' ]; then
+    $HERE/usr/games/asciiquarium $option_run
 fi
