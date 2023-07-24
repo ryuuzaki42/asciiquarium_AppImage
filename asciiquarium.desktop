@@ -4,6 +4,6 @@ Exec=asciiquarium
 Terminal=false
 Type=Application
 StartupNotify=false
-Icon=asciiquarium.png
+Icon=asciiquarium
 MimeType=
 Categories=Game;
