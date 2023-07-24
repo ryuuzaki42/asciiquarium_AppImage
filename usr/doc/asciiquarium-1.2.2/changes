@@ -1,0 +1,41 @@
+Changes for asciiquarium and tiftquarium
+
+Version 1.2.2_TAG_2
+    - mv CHANGES changes
+    - mv README.md readme.md
+    - add asciiquarium_fs - Run asciiquarium in fullscreen
+
+Version 1.2.2
+    - Info to run in fullscreen
+    - tiftquarium - add 'add_old_fish' to "-c" classic mode
+
+Version 1.2.1
+    - Deleted gpl.txt, README, MANIFEST
+    - Update help message
+    - Options to add objects whe asciiquarium is running:
+        a - random objects
+        b - ship/boat
+        B - big_fish
+        d - dolphins
+        D - ducks
+        f - fish
+        h - fishhook
+        m - monster
+        s - shark
+        S - submarine
+        W - sword_fish
+        A - swan
+        w - whale
+
+Version 1.2
+    - Spaces instead of tab
+    - ' ' instead of '?'
+    - More option when running (see help message)
+    - More information in help message (-h or --help)
+    - Add tiftquarium
+
+Version 1.1
+    - Add new fish species
+
+Version 1.0
+    - Initial public release
