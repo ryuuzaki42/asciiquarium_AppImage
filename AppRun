@@ -1,0 +1,21 @@
+#!/bin/bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+
+export PERL5LIB="$HERE/usr/lib64/perl5/vendor_perl/:$HERE/usr/share/perl5/vendor_perl/"
+
+echo -e "\n # Repository: https://github.com/ryuuzaki42/asciiquarium #\n"
+
+echo "1 - asciiquarium"
+echo "2 - asciiquarium in fullscreen"
+echo "3 - tiftquarium"
+echo -en "Which one to run?: "
+read -r nun_run
+
+if [ "$nun_run" == '2' ]; then
+    #$HERE/usr/games/asciiquarium_fs
+    xterm -fullscreen -bg black -e $HERE/usr/games/asciiquarium $@
+elif [ "$nun_run" == '3' ]; then
+    $HERE/usr/games/tiftquarium
+else # if [ "$nun_run" == '1' ]; then
+    $HERE/usr/games/asciiquarium
+fi
